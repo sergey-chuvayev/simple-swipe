@@ -1,0 +1,7 @@
+.banner-block {
+  width: 320px;
+  height: 568px;
+  overflow: hidden; }
+  .banner-block .inner-frame img.slide {
+    width: 100%;
+    height: 100%; }
