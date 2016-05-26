@@ -5,7 +5,7 @@ var concat = require('gulp-concat');
 var clean = require('gulp-clean');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync');
-
+var cssmin = require('gulp-cssmin');
 
 gulp.task('clean', function () {
     return gulp.src('./public/*', {read: false})
@@ -24,14 +24,16 @@ gulp.task('html', function(){
 gulp.task('css', function(){
     return gulp.src('./src/css/*')
         .pipe(sass())
+        .pipe(concat('style.css'))
+        .pipe(cssmin())
         .pipe(gulp.dest('./public/css/'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('js', function(){
     return gulp.src(['./src/js/**/*.js'])
-        // .pipe(concat('script.js'))
-        // .pipe(uglify())
+        .pipe(concat('script.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('./public/js/'))
         .pipe(browserSync.reload({ stream: true }));
 });
