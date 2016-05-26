@@ -26,5 +26,13 @@ $(function() {
     var mySwiper = new Swiper ('.swiper-container', {
         direction: 'horizontal',
         loop: true,
+        
+        pagination: '.swiper-pagination',
+        
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        preloadImages: false,
+        lazyLoading: true,
+        // effect: 'cube'
     });        
 });
