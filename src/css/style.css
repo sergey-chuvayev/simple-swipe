@@ -1,12 +1,27 @@
-.banner-block {
-    width: 320px; height: 568px;
-    overflow: hidden;
-    .inner-frame {
-        white-space: nowrap;
-        font-size: 0;
-        img.slide {
-            width: 100%; height: 100%;
-            display: inline-block;
+// .banner-block {
+//     width: 320px; height: 568px;
+//     overflow: hidden;
+//     .inner-frame {
+//         white-space: nowrap;
+//         font-size: 0;
+//         img.slide {
+//             width: 100%; height: 100%;
+//             display: inline-block;
+//         }
+//     }
+// }
+
+.swiper-container {
+    width: 430px; height: 173px;
+    .swiper-wrapper {
+        .swiper-slide {
+            .slide {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
-}
+}    
+    img.slide {
+        width: 100%;
+    }

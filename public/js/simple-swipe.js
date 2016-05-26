@@ -1,5 +1,5 @@
 (function( $ ) {
-    $.fn.myPlugin = function() {
-        
+    $.fn.simpleSwipe = function() {
+      
     };
 })(jQuery);
