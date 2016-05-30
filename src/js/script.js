@@ -36,6 +36,7 @@ $(function() {
     function registerCurrentSlideEvent(slideNum) {
         $.get(events['event'+slideNum], function () {
             //sent
+            console.info('event sent');
         })
     }
 
