@@ -1,42 +1,47 @@
- var config = {
-        id: 1039,
-        profileId: 'user-profile-id',
-        platformId: 39,
-        api: 'http://specials.lookatme.ru/amberdata/tags',
-    }
+var events = {
+    event1: '%eventHTML1%',
+    event2: '%eventHTML2%',
+    event3: '%eventHTML3%',
+    event4: '%eventHTML4%',
+    event5: '%eventHTML5%',
+    event6: '%eventHTML6%',
+    event7: '%eventHTML7%',
+    event8: '%eventHTML8%',
+    event9: '%eventHTML9%',
+    event10: '%eventHTML10%'
+}
 
-    if (window.location.href.split('/').length > 5) { // check if not main page
-        getTags();
-    }
 
-    function getTags() {
-        var url = getUrl();
-        $.get(config.api, { url: url }, function(data) {
-            if (data.length !== 0) {
-                sendAmberdata(data);
-            } else {
-                console.info('No tags for this url');
+$(function() {
+   
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        
+        pagination: '.swiper-pagination',
+        
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        preloadImages: false,
+        lazyLoading: true,
+        onSlideChangeEnd: function(e){
+            var currentSlide = e.activeIndex;
+            if (e.activeIndex === e.slides.length - 1) {
+                currentSlide = 1;
+            } else if (e.activeIndex === 0) {
+                currentSlide = e.slides.length - 2;
             }
+            registerCurrentSlideEvent(currentSlide);
+
+        }
+    });
+
+    
+
+    function registerCurrentSlideEvent(slideNum) {
+        $.get(events['event'+slideNum], function () {
+            //sent
         })
-        .error(function(e) {
-            console.log(e);
-        });
-    };
-
-    function getUrl() {
-        var seg = window.location.href.split('/');
-        var url = seg[0]+'/'+seg[1]+'/'+seg[2]+'/'+seg[3]+'/'+seg[4]+'/'+seg[5]; // get first segments
-        return url;
     }
 
-    function sendAmberdata(tags) {
-        window.adcm.configure({
-            id: config.id,
-            profileId: config.profileId,
-            platformId: config.platformId,
-            tags: tags
-        }, function () {
-            console.log('amberdata tags: ',tags);
-            window.adcm.call();
-        });
-    }
+});
