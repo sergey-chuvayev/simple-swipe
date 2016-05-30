@@ -4,6 +4,10 @@
 $(function() {
 
     initImages();
+
+    $('.swiper-container').click(function() {
+        
+    });
    
     var mySwiper = new Swiper ('.swiper-container', {
         direction: 'horizontal',
