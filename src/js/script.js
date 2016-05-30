@@ -2,6 +2,8 @@
 
 
 $(function() {
+
+    initImages();
    
     var mySwiper = new Swiper ('.swiper-container', {
         direction: 'horizontal',
@@ -25,7 +27,11 @@ $(function() {
         }
     });
 
-    
+    function initImages() {
+        for (var i = 0; i < images.length; i++) {
+            $('.swiper-container .swiper-wrapper').append('<div class="swiper-slide"><img class="slide" src="'+ images[i] +'" alt=""></div>');
+        };
+    }
 
     function registerCurrentSlideEvent(slideNum) {
         $.get(events['event'+slideNum], function () {
