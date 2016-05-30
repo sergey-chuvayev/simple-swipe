@@ -1,38 +1,42 @@
-$(function() {
-    // var startPos = 0;
-    // var $slider = $(".inner-frame");
+ var config = {
+        id: 1039,
+        profileId: 'user-profile-id',
+        platformId: 39,
+        api: 'http://specials.lookatme.ru/amberdata/tags',
+    }
 
-    // $slider.css('transform','translateX(0px)'); // init translate 0px
-    // var currentTranslate = $slider.css('transform').split(',')[4];
+    if (window.location.href.split('/').length > 5) { // check if not main page
+        getTags();
+    }
 
-    // $slider.on("touchstart",function(e){
-    //     startPos = e.originalEvent.touches[0].pageX;
-    // }).on("touchmove", function(e){
-    //     var pos = e.originalEvent.touches[0].pageX;
-        
-    //     var newPos = currentTranslate + pos;
-    //     console.log(pos)
-    //     $(e.currentTarget).css('transform','translateX('+ (currentTranslate+pos) +'px)');
-    // })
-    // .on("touchend", function(e){
-    //     var endPos = e.originalEvent.changedTouches[0].pageX;
-    //     if (startPos > endPos) {
-    //         console.log('left');
-    //     } else {
-    //         console.log('right');
-    //     }
-    // });
+    function getTags() {
+        var url = getUrl();
+        $.get(config.api, { url: url }, function(data) {
+            if (data.length !== 0) {
+                sendAmberdata(data);
+            } else {
+                console.info('No tags for this url');
+            }
+        })
+        .error(function(e) {
+            console.log(e);
+        });
+    };
 
-    var mySwiper = new Swiper ('.swiper-container', {
-        direction: 'horizontal',
-        loop: true,
-        
-        pagination: '.swiper-pagination',
-        
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        preloadImages: false,
-        lazyLoading: true,
-        // effect: 'cube'
-    });        
-});
+    function getUrl() {
+        var seg = window.location.href.split('/');
+        var url = seg[0]+'/'+seg[1]+'/'+seg[2]+'/'+seg[3]+'/'+seg[4]+'/'+seg[5]; // get first segments
+        return url;
+    }
+
+    function sendAmberdata(tags) {
+        window.adcm.configure({
+            id: config.id,
+            profileId: config.profileId,
+            platformId: config.platformId,
+            tags: tags
+        }, function () {
+            console.log('amberdata tags: ',tags);
+            window.adcm.call();
+        });
+    }
