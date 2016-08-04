@@ -21,11 +21,13 @@ $(function() {
         lazyLoading: true,
         onSlideChangeEnd: function(e){
             var currentSlide = e.activeIndex;
-            if (e.activeIndex === e.slides.length - 1) {
+            $('#main-link').attr('href', events["event"+currentSlide]);
+            
+            if (e.activeIndex === e.slides.length - 1)
                 currentSlide = 1;
-            } else if (e.activeIndex === 0) {
+            if (e.activeIndex === 0)
                 currentSlide = e.slides.length - 2;
-            }
+            
             registerCurrentSlideEvent(currentSlide);
 
         }
