@@ -21,6 +21,8 @@ $(function() {
         lazyLoading: true,
         onSlideChangeEnd: function(e){
             var currentSlide = e.activeIndex;
+            console.log('event number', currentSlide);
+            console.log('event link', events["event"+currentSlide]);
             $('#main-link').attr('href', events["event"+currentSlide]);
             
             if (e.activeIndex === e.slides.length - 1)
