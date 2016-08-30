@@ -21,9 +21,7 @@ $(function() {
         lazyLoading: true,
         onSlideChangeEnd: function(e){
             var currentSlide = e.activeIndex;
-            console.log('event number', currentSlide);
-            console.log('event link', events["event"+currentSlide]);
-            $('#main-link').attr('href', events["event"+currentSlide]);
+            $('#main-link').attr('href', clickEvents["event"+currentSlide]);
             
             if (e.activeIndex === e.slides.length - 1)
                 currentSlide = 1;
@@ -42,7 +40,8 @@ $(function() {
     }
 
     function registerCurrentSlideEvent(slideNum) {
-        $.get(events['event'+slideNum], function () {
+        console.log(slideNum, 'viewed');
+        $.get(viewEvents['event'+slideNum], function () {
             //sent
             console.info('event sent');
         })
