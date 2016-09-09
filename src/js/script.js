@@ -40,7 +40,7 @@ $(function() {
     }
 
     function registerCurrentSlideEvent(slideNum) {
-        console.log(slideNum, 'viewed');
+        console.log(slideNum, 'viewedasdasd');
         $.get(viewEvents['event'+slideNum], function () {
             //sent
             console.info('event sent');

@@ -3,59 +3,50 @@
 <head>
     <title></title>
     <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- inject:css -->
     <!-- endinject -->
 </head>
 <body>
-    
-    <!-- <div class="banner-block" id="banner">
-        <div class="inner-frame">
-            <img class="slide" src="img/0.jpg" alt="">
-            <img class="slide" src="img/1.jpg" alt="">
-            <img class="slide" src="img/2.jpg" alt="">
-        </div>
-    </div> -->
 
     <div class="swiper-container">
+        <div class="advert">реклама</div>
         <a id="main-link" href="%reference%" target="%target%" class="swiper-wrapper">
-            <!-- <div class="swiper-slide"><img class="slide" src="" alt=""></div> -->
         </a>
         <div class="swiper-pagination swiper-pagination-white"></div>
         <div class="swiper-button-prev swiper-button-white"></div>
         <div class="swiper-button-next swiper-button-white"></div>
-        <!-- <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div> -->
-        <!-- <div class="swiper-scrollbar"></div> -->
         <div class="controls-block">
             <div class="controls-block__button">Купить</div>
         </div>
     </div>
 
     <script type="text/javascript">
-        var clickEvents = {
-            event1: 'http://facebook.com/',
-            event2: 'http://soundcloud.com/',
-            event3: 'http://google.com/',
-            event4: '%reference%@%eventHTML4%',
-            event5: '%reference%@%eventHTML5%',
-            event6: '%reference%@%eventHTML6%',
-            event7: '%reference%@%eventHTML7%',
-            event8: '%reference%@%eventHTML8%',
-            event9: '%reference%@%eventHTML9%',
-            event10: '%reference%@%eventHTML10%'
-        }
-        var viewEvents = {
-            event11: 'http://facebook.com/',
-            event12: 'http://soundcloud.com/',
-            event13: 'http://google.com/',
-            event14: '%reference%@%eventHTML4%',
-            event15: '%reference%@%eventHTML5%',
-            event16: '%reference%@%eventHTML6%',
-            event17: '%reference%@%eventHTML7%',
-            event18: '%reference%@%eventHTML8%',
-            event19: '%reference%@%eventHTML9%',
-            event20: '%reference%@%eventHTML10%'
-        }
-        var images = [ 'img/0.jpg', 'img/1.jpg', 'img/2.jpg' ];
+         var clickEvents = {
+           event1: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=2aaa4807549ff1ac&pm=b&lts=euacvli&pr=btkbq&p5=dxmqu&rand=clopfyo&p1=bjxme&p2=esdk',
+           event2: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=a67f5835354bf7ab&pm=c&lts=euacvli&pr=btkbq&p5=dxmqu&rand=cxzhdxz&p1=bjxme&p2=esdk',
+           event3: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=66c1a84958f31f2e&pm=d&lts=euacvli&pr=btkbq&p5=dxmqu&rand=epqpuap&p1=bjxme&p2=esdk',
+           event4: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=313d815215e167b3&pm=e&lts=euacvli&pr=btkbq&p5=dxmqu&rand=ghsoqko&p1=bjxme&p2=esdk',
+           event5: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=40ca670200d0bf9c&pm=f&lts=euacvli&pr=btkbq&p5=dxmqu&rand=gslhbce&p1=bjxme&p2=esdk',
+           event6: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=b51a82b1c7e49063&pm=g&lts=euacvli&pr=btkbq&p5=dxmqu&rand=hdszfl&p1=bjxme&p2=esdk',
+           event7: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=6aff774c3ab1b2ff&pm=h&lts=euacvli&pr=btkbq&p5=dxmqu&rand=guhaztw&p1=bjxme&p2=esdk',
+           event8: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=d39983b2252d08a7&pm=i&lts=euacvli&pr=btkbq&p5=dxmqu&rand=dpojhvb&p1=bjxme&p2=esdk',
+           event9: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=b1b47ca9b5a409b9&pm=j&lts=euacvli&pr=btkbq&p5=dxmqu&rand=fvgxrnw&p1=bjxme&p2=esdk',
+           event10: 'http://ads.adfox.ru/5024/goLink?hash=3ee695d27aee007e&pr=btkbq&p5=dxmqu&rand=xcfrdy&p1=bjxme&p2=esdk@http://ads.adfox.ru/5024/event?hash=f39f52ecc26248dd&pm=k&lts=euacvli&pr=btkbq&p5=dxmqu&rand=jiuiap&p1=bjxme&p2=esdk',
+       }
+       var viewEvents = {
+           event1: 'http://ads.adfox.ru/5024/event?hash=b6ca7966794a5896&pm=l&lts=euacvli&pr=btkbq&p5=dxmqu&rand=gcwxqw&p1=bjxme&p2=esdk',
+           event2: 'http://ads.adfox.ru/5024/event?hash=3792a390f4016fe6&pm=m&lts=euacvli&pr=btkbq&p5=dxmqu&rand=dtpxdhc&p1=bjxme&p2=esdk',
+           event3: 'http://ads.adfox.ru/5024/event?hash=77434e76a10fe5b9&pm=n&lts=euacvli&pr=btkbq&p5=dxmqu&rand=ehlnviz&p1=bjxme&p2=esdk',
+           event4: 'http://ads.adfox.ru/5024/event?hash=9090f7989a9d1048&pm=o&lts=euacvli&pr=btkbq&p5=dxmqu&rand=cfpjadi&p1=bjxme&p2=esdk',
+           event5: 'http://ads.adfox.ru/5024/event?hash=a9071675c7215c0b&pm=p&lts=euacvli&pr=btkbq&p5=dxmqu&rand=dnydsiv&p1=bjxme&p2=esdk',
+           event6: 'http://ads.adfox.ru/5024/event?hash=2ae668436a69484d&pm=q&lts=euacvli&pr=btkbq&p5=dxmqu&rand=dmjwzpd&p1=bjxme&p2=esdk',
+           event7: 'http://ads.adfox.ru/5024/event?hash=5ab5548f35d2093f&pm=r&lts=euacvli&pr=btkbq&p5=dxmqu&rand=gcjillj&p1=bjxme&p2=esdk',
+           event8: 'http://ads.adfox.ru/5024/event?hash=87b1284bf6554f7b&pm=s&lts=euacvli&pr=btkbq&p5=dxmqu&rand=brebidx&p1=bjxme&p2=esdk',
+           event9: 'http://ads.adfox.ru/5024/event?hash=ef3984879522793c&pm=t&lts=euacvli&pr=btkbq&p5=dxmqu&rand=bzrlief&p1=bjxme&p2=esdk',
+           event10:'http://ads.adfox.ru/5024/event?hash=47ac22479129faef&pm=u&lts=euacvli&pr=btkbq&p5=dxmqu&rand=bjxdhzn&p1=bjxme&p2=esdk',
+       }
+        var images = [ 'http://vovaane.github.io/converse/01-min.jpg', 'http://vovaane.github.io/converse/02-min.jpg', 'http://vovaane.github.io/converse/03-min.jpg' , 'http://vovaane.github.io/converse/04-min.jpg' , 'http://vovaane.github.io/converse/05-min.jpg', 'http://vovaane.github.io/converse/06-min.jpg', 'http://vovaane.github.io/converse/07-min.jpg', 'http://vovaane.github.io/converse/08-min.jpg', 'http://vovaane.github.io/converse/09-min.jpg', 'http://vovaane.github.io/converse/10-min.jpg'];
     </script>
 
     <!-- inject:js -->
