@@ -1,4 +1,5 @@
 
+var firstTime = true;
 
 
 $(function() {
@@ -20,6 +21,11 @@ $(function() {
         preloadImages: false,
         lazyLoading: true,
         onSlideChangeEnd: function(e){
+
+            if (firstTime) {
+                registerCurrentSlideEvent(unique);
+            };
+
             var currentSlide = e.activeIndex;
             $('#main-link').attr('href', clickEvents["event"+currentSlide]);
             
