@@ -51,7 +51,7 @@ gulp.task('img', function () {
 });
 
 
-gulp.task('serve', ['css', 'js', 'img', 'data', 'html'], function(){
+gulp.task('watch', function(){
 
     browserSync({
         server: {
@@ -59,8 +59,11 @@ gulp.task('serve', ['css', 'js', 'img', 'data', 'html'], function(){
         }
     });
 
-    gulp.watch('./src/js/**/*.js', ['js'])
-    gulp.watch('./src/css/*.scss', ['css'])
-    gulp.watch('./src/index.html', ['html'])
+    gulp.watch('./src/js/**/*.js', ['js']);
+    gulp.watch('./src/css/*.scss', ['css']);
+    gulp.watch('./src/index.html', ['html']);
 
 });
+
+
+gulp.task('serve', ['watch','css', 'js', 'html']);

@@ -6,8 +6,8 @@ $(function() {
 
     initImages();
 
-    $('.swiper-container').click(function() {
-        
+    $(window).on('mousedown', function(){
+        sendUnique();
     });
    
     var mySwiper = new Swiper ('.swiper-container', {
@@ -22,10 +22,6 @@ $(function() {
         lazyLoading: true,
         onSlideChangeEnd: function(e){
 
-            if (firstTime) {
-                registerCurrentSlideEvent(unique);
-            };
-
             var currentSlide = e.activeIndex;
             $('#main-link').attr('href', clickEvents["event"+currentSlide]);
             
@@ -36,8 +32,20 @@ $(function() {
             
             registerCurrentSlideEvent(currentSlide);
 
+        },
+        onTouchStart: function(e) {
+            sendUnique();
         }
     });
+
+    function sendUnique() {
+        if (firstTime) {
+            $.get(unique, function () {
+                console.info('unique event sent');
+            });
+            firstTime = false;
+        };
+    }
 
     function initImages() {
         for (var i = 0; i < images.length; i++) {
@@ -46,11 +54,11 @@ $(function() {
     }
 
     function registerCurrentSlideEvent(slideNum) {
-        console.log(slideNum, 'viewedasdasd');
+        console.log(slideNum, 'viewed');
         $.get(viewEvents['event'+slideNum], function () {
             //sent
             console.info('event sent');
-        })
+        });
     }
 
 });
